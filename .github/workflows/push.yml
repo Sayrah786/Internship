@@ -1,0 +1,19 @@
+name: WebdriverIO with Docker Compose
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch
+
+jobs:
+  webdriverio_docker_compose:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Jenkinsfile Runner
+      run: |
+        curl -L https://github.com/jenkinsci/jenkinsfile-runner/releases/latest/download/jenkinsfile-runner.jar -o jenkinsfile-runner.jar
+        java -jar jenkinsfile-runner.jar -w /Jenkinsfile
