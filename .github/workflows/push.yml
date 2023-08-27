@@ -16,9 +16,9 @@ jobs:
     - name: Trigger jenkins job
       uses: jabbukka/jenkins-trigger@main
       with:
-        url: http://localhost:8080/
+        url: "http://localhost:8080/"
         job_name: "JENKINS_PIPLINE2"
-        user_name: ${{ secrets.JENKINS_USER }}
-        api_token: 11c5bba0b516310ed044b8eb7e4e009683
+        user_name: "sayrah"
+        api_token: "11c5bba0b516310ed044b8eb7e4e009683"
         wait: "true"
         timeout: "1000"
