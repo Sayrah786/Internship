@@ -12,8 +12,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Run Jenkinsfile Runner
-      run: |
-        curl -L https://github.com/jenkinsci/jenkinsfile-runner/releases/latest/download/jenkinsfile-runner.jar -o jenkinsfile-runner.jar
-        java -jar jenkinsfile-runner.jar -w /Jenkinsfile
+      
+    - name: Trigger jenkins job
+      uses: jabbukka/jenkins-trigger@main
+      with:
+        url: http://localhost:8080/
+        job_name: "JENKINS_PIPLINE2"
+        user_name: ${{ secrets.JENKINS_USER }}
+        api_token: 11c5bba0b516310ed044b8eb7e4e009683
+        wait: "true"
+        timeout: "1000"
