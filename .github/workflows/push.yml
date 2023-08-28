@@ -16,9 +16,9 @@ jobs:
     - name: Trigger jenkins job
       uses: jabbukka/jenkins-trigger@main
       with:
-        url: "https://jenkins.decathlonin.net/job/DOSA/job/DOSA-IND-AUTOBOT/job/MobileTesting/job/Preprod/"
+        url: "localhost"
         job_name: "pipeline_Automation"
-        user_name: "z08srahm"
+        user_name: "sayrah"
         api_token: "114a11325efebca9c7aa7b19d384995e89"
         wait: "true"
         timeout: "1000"
